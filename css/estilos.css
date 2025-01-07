@@ -179,19 +179,6 @@ footer, header, nav, section, main {
   border-radius: 5px;
 }
 
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background: rgba(0, 0, 0, 0.3); /* Opcional: para mejorar legibilidad */
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 90%; /* Limita el ancho para evitar desbordes */
-  box-sizing: border-box; /* Asegura que el padding se considere en el ancho total */
-}
-
 ol, ul {
   list-style: none;
 }
@@ -1911,15 +1898,24 @@ form input[type=submit][type=reset] {
   animation-name: slideOutUp;
 }
 
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 90%; /* Ajusta para evitar desbordes */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 @media (max-width: 576px) {
   .carousel-caption h1 {
-    font-size: 1.5rem; /* Tamaño más pequeño para móviles */
+      font-size: 1.5rem;
   }
   .carousel-caption h5 {
-    font-size: 1rem; /* Tamaño ajustado */
-    line-height: 1.4; /* Espaciado entre líneas */
-  }
-  .carousel-caption {
-    padding: 15px; /* Reduce el padding en pantallas pequeñas */
+      font-size: 1rem;
   }
 }
