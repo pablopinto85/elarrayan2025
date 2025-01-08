@@ -71,7 +71,7 @@ body {
   margin-right: 0;
   margin-left: 0; /* Elimina márgenes que puedan causar descuadre */}
 
-  .card img {
+.card img {
     max-width: 100%; /* Asegura que las imágenes no excedan los límites */
     height: auto;
   }
@@ -120,12 +120,13 @@ height: 60px;
 }
 
 .card-img-top {
-  height: 200px;
-  object-fit: cover;
-  width: 100%;
+    object-fit: cover; /* Asegura que la imagen llene el espacio */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Ajusta la altura para que todas las imágenes tengan la misma proporción */
   }
+  
 
-  .row-cols-md-2 > .col {
+.row-cols-md-2 > .col {
     display: flex;}
 
 /* Efecto de desvanecimiento suave para el carrusel */
@@ -251,7 +252,7 @@ form input[type=submit][type=reset] {
   --animate-duration: 2s;
 }
 
-.card {
+.card { 
   background-color: rgb(8, 1, 1);
   background-image: linear-gradient(rgb(6, 163, 40), rgb(2, 82, 32));
   border-radius: 0.25rem;
@@ -261,10 +262,23 @@ form input[type=submit][type=reset] {
   overflow: hidden;
   height: 100%;
   transition: transform 0.2s;
+  justify-content: space-between; /* Hace que el contenido se ajuste adecuadamente */
+  }
+
+
+.card-img-top {
+  object-fit: cover; /* Asegura que la imagen cubra el área */
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+  height: 200px; /* Ajusta la altura para que todas las imágenes tengan la misma altura */
+}
+
+
+.card-body {
+  flex-grow: 1; /* Asegura que el contenido se ajuste al espacio restante */
 }
 .card .btn {
   background-color: rgb#225731;
-  border: 1px solid black;
+  border: none;
   color: black;
   border-radius: 20px;
   padding: 0.5rem;
