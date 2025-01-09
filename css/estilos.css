@@ -6,13 +6,21 @@
 .btn {
 background-color: #225731;
 color: #fff;
+text-transform: none;
+}
+
+button {
+  text-transform: none; /* Asegura que no haya transformaciones globales */
+}
+button::first-letter {
+  text-transform: uppercase; /* Solo la primera letra estará en mayúscula */
 }
 
 .btn-success {
   background-color: #fff; /* Tu color personalizado */
   color: white; /* Asegura que el texto sea blanco */
   border: none; /* Opcional, para eliminar bordes */
-}
+  }
 
 .btn-success:hover {
   background-color: var(--accent-color); /* Color más claro al pasar el cursor */
@@ -1938,4 +1946,8 @@ form input[type=submit][type=reset] {
   .carousel-caption h5 {
       font-size: 1rem; /* Reduce subtítulos */
   }
+}
+
+button {
+  text-transform: capitalize;
 }
