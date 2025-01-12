@@ -1,3 +1,8 @@
 User-agent: *
+Allow: /
 Disallow: /admin/
 Disallow: /private/
+Disallow: /files/reglamentacion.pdf
+Disallow: /pages/politicas.html
+Disallow: /pages/reglamento.html
+Disallow: /pagina-duplicada
