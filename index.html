@@ -119,35 +119,55 @@
 <section id="contacto" class="container mt-5 text-center">
   <h2 class="card-title">Contáctanos</h2>
   <br>
-  <form id="contactForm" class="mx-auto" style="max-width: 400px;">
-    <input type="hidden" name="_captcha" value="false">
+  <form 
+    id="contactForm" 
+    class="mx-auto" 
+    style="max-width: 400px;" 
+    action="https://formsubmit.co/tusreservasarrayan@gmail.com" 
+    method="POST">
+       <!-- Campos ocultos para personalizar el envío -->
+       <input type="hidden" name="_captcha" value="false">
+       <input type="hidden" name="_template" value="box">
+
+    <!-- Campo Nombre -->
     <div class="mb-3">
       <label for="name" class="card-title form-label">Nombre</label>
       <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
     </div>
+    
+    <!-- Campo Email -->
     <div class="mb-3">
       <label for="email" class="card-title form-label">Email</label>
       <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo" required>
     </div>
+    
+    <!-- Campo Teléfono -->
     <div class="mb-3">
-      <label for="number" class="card-title form-label">Telefono</label>
+      <label for="number" class="card-title form-label">Teléfono</label>
       <input type="text" class="form-control" id="number" name="number" placeholder="Ingresa tu número de teléfono" required>
     </div>
+    
+    <!-- Campo Mensaje -->
     <div class="mb-3">
       <label for="message" class="card-title form-label">Mensaje</label>
       <textarea class="form-control" id="message" name="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
     </div>
-    <button type="submit" class="btn btn">Enviar</button>
+    
+    <!-- Botón Enviar -->
+    <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
 </section>
 
+<!-- Librería SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Script para gestionar el envío -->
 <script>
   document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Detiene el envío normal del formulario
 
     // Envía los datos a FormSubmit
-    fetch("https://formsubmit.co/tusreservasarrayan@gmail.com", {
+    fetch(event.target.action, {
       method: "POST",
       body: new FormData(event.target),
     })
@@ -176,7 +196,6 @@
       });
   });
 </script>
-
 
   <!-- Footer -->
   <footer class=" footer text-center py-4 mt-5">
